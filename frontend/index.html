@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Fantasista</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div class="container">
+    <!-- Логотип и название -->
+    <div id="logo">
+      <img src="logo.PNG">
+    </div>
+  <div id="auth">
+    <!-- Формы логина и регистрации -->
+    <div id="loginForm">
+      <h2>Вход</h2>
+      <input id="loginEmail" type="email" placeholder="Email">
+      <input id="loginPass" type="password" placeholder="Пароль">
+      <button id="auth_button" class="auth_button" onclick="login()">Войти</button>
+      <p>Нет аккаунта? <a href="#" onclick="toggleForms()">Зарегистрироваться</a></p>
+    </div>
+
+    <div id="registerForm" style="display:none;">
+      <h2>Регистрация</h2>
+      <input id="regEmail" type="email" placeholder="Email">
+      <input id="regPass" type="password" placeholder="Пароль">
+      <button onclick="register()">Зарегистрироваться</button>
+      <p>Уже есть аккаунт? <a href="#" onclick="toggleForms()">Войти</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

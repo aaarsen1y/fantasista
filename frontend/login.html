@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Fantasista</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="login.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Логотип и название -->
+    <div id="logo">
+      <img src="logo.PNG" alt="Fantasista">
+    </div>
+
+    <div id="auth">
+      <!-- Форма логина -->
+      <div id="loginForm">
+        <h2>Вход</h2>
+        <input id="loginEmail" type="email" placeholder="Email" required>
+        <input id="loginPass" type="password" placeholder="Пароль" required>
+        <button id="auth_button" class="auth_button" onclick="login()">Войти</button>
+        <p>Нет аккаунта? <
