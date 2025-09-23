@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Fantasista</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
   <link rel="shortcut icon" href="icon.png" type="image/png">
 </head>
 <body>
@@ -155,7 +156,7 @@
     <ul id="playersList"></ul>
     <button onclick="logout()">Выйти</button>
   </div>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
     document.addEventListener("DOMContentLoaded", () => {
         console.log("Страница загружена, вызываем loadPlayers()");
