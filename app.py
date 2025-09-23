@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session, render_template
+from flask import Flask, request, jsonify, session, render_template, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
@@ -90,6 +90,19 @@ class TeamStrength(db.Model):
 # ==== Создание таблиц при запуске ====
 with app.app_context():
     db.create_all()
+
+
+
+
+# === Кэш ===
+
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory(
+        os.path.join(app.root_path, 'frontend'),
+        filename,
+        cache_timeout=60*60*24*7  # 7 дней
+    )
 
 # ==== Декораторы ====
 def login_required(fn):
