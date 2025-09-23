@@ -119,7 +119,7 @@ def health():
 
 @app.route("/")
 def login_page():
-    return render_template("login.html")
+    return render_template("index.html")
 
 
 # Регистрация
