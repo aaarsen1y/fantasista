@@ -413,7 +413,7 @@ function renderTablePage() {
 
       if (col.key === "country" && val) {
         const img = document.createElement("img");
-        img.src = `graphics/flags/${val}.png`;
+        img.src = `/graphics/flags/${val}.png`;
         img.alt = val;
         img.style.height = "20px";
         img.style.marginRight = "5px";
@@ -455,7 +455,10 @@ let profileHTML = `
       <td style="padding:5px; display:flex; align-items:center; gap:10px;">
         <span>${player.name}</span>
         
-        ${player.country ? `<img src="graphics/flags/${player.country}.png" alt="${player.country}" style="height:20px;">` : ""}
+        ${player.country 
+  ? `<img src="/graphics/flags/${player.country}.png" alt="${player.country}" style="height:20px;">` 
+  : ""}
+
       </td>
     </tr>
     <tr><th style="text-align:left; padding:5px;">Age</th><td style="padding:5px;">${player.age}</td></tr>
@@ -506,7 +509,17 @@ if (player.team) {
 
       teamHTML = `
         <table class="team-strength-table" style="width:100%; border-collapse:collapse;">
-          <tr><th style="text-align:left; padding:5px;">Team</th><td style="padding:5px;">${player.team ? `<img src="graphics/logos/${player.team}.svg" alt="${player.team}" style="height:20px;">` : ""}</td></tr>
+         
+        <tr>
+          <th style="text-align:left; padding:5px;">Team</th>
+          <td style="padding:5px;">
+            ${player.team 
+              ? `<img src="/graphics/logos/${player.team}.svg" alt="${player.team}" style="height:20px;">` 
+              : ""}
+          </td>
+        </tr>
+
+
           <tr><th style="text-align:left; padding:5px;">Last 5 matches</th><td style="padding:5px;">${lastMatchesHTML}</td></tr>
           <tr><th style="text-align:left; padding:5px;">Overall Strength</th>
               <td style="padding:5px; color:${getRatingColorDark(teamData.Team_Strength, minValues.Team_Strength, maxValues.Team_Strength)}">${teamData.Team_Strength}</td></tr>
@@ -518,12 +531,15 @@ if (player.team) {
               <td style="padding:5px; color:${getRatingColorDark(teamData.Control_Rating, minValues.Control_Rating, maxValues.Control_Rating)}">${teamData.Control_Rating}</td></tr>
           <tr><th style="text-align:left; padding:5px;">Style</th><td style="padding:5px;">${teamData.Team_Style}</td></tr>
           <tr>
-            <th style="text-align:left; padding:5px;">Next Opp / Ov / At / Def</th>
-            <td style="padding:5px;">
-              ${teamData.next_opponent ? `<img src="graphics/logos/${teamData.next_opponent}.svg" alt="${teamData.next_opponent}" style="height:20px;">` : ""}
-              ${oppRatingsHTML}
-            </td>
-          </tr>
+          <th style="text-align:left; padding:5px;">Next Opp / Ov / At / Def</th>
+          <td style="padding:5px;">
+            ${teamData.next_opponent 
+              ? `<img src="/graphics/logos/${teamData.next_opponent}.svg" alt="${teamData.next_opponent}" style="height:20px;">` 
+              : ""}
+            ${oppRatingsHTML}
+          </td>
+        </tr>
+
 
           <tr><th style="text-align:left; padding:5px;">Opp last 5 matches / Style</th><td style="padding:5px;">${oppLastMatchesHTML} / ${nextOppData.Team_Style}</td></tr>
         </table>
