@@ -7,7 +7,11 @@ import os
 
 
 # ==== Конфигурация приложения ====
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder="frontend",      # CSS, JS, картинки
+    template_folder="frontend"     # HTML
+)
 app.config["SECRET_KEY"] = "dev-secret-key-change-me"
 from flask_cors import CORS
 
@@ -110,6 +114,13 @@ def admin_required(fn):
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok"})
+
+
+
+@app.route("/")
+def login_page():
+    return render_template("login.html")
+
 
 # Регистрация
 @app.route("/register", methods=["POST"])
