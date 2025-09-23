@@ -45,7 +45,7 @@ async function login() {
     alert("Успешный вход: " + data.role);
 
     // редирект на players.html
-    window.location.href = "players.html";
+    window.location.href = "/players_page";
   } else {
     alert("Ошибка входа");
   }

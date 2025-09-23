@@ -115,7 +115,9 @@ def admin_required(fn):
 def health():
     return jsonify({"status": "ok"})
 
-
+@app.route("/players_page")
+def players_page():
+    return render_template("players.html")
 
 @app.route("/")
 def login_page():
