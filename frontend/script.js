@@ -71,7 +71,7 @@ async function logout() {
 
     if (res.ok) {
       alert("Вы вышли из аккаунта");
-      window.location.href = "index.html"; // 🔄 редирект на страницу входа
+      window.location.href = "/"; // 🔄 редирект на страницу входа
     } else {
       console.error("Ошибка выхода:", res.status);
       alert("Ошибка выхода");
@@ -413,7 +413,7 @@ function renderTablePage() {
 
       if (col.key === "country" && val) {
         const img = document.createElement("img");
-        img.src = `/graphics/flags/${val}.png`;
+        img.src = `/static/graphics/flags/${val}.png`;
         img.alt = val;
         img.style.height = "20px";
         img.style.marginRight = "5px";
@@ -456,7 +456,7 @@ let profileHTML = `
         <span>${player.name}</span>
         
         ${player.country 
-  ? `<img src="/graphics/flags/${player.country}.png" alt="${player.country}" style="height:20px;">` 
+  ? `<img src="/static/graphics/flags/${player.country}.png" alt="${player.country}" style="height:20px;">` 
   : ""}
 
       </td>
@@ -514,7 +514,7 @@ if (player.team) {
           <th style="text-align:left; padding:5px;">Team</th>
           <td style="padding:5px;">
             ${player.team 
-              ? `<img src="/graphics/logos/${player.team}.svg" alt="${player.team}" style="height:20px;">` 
+              ? `<img src="/static/graphics/logos/${player.team}.svg" alt="${player.team}" style="height:20px;">` 
               : ""}
           </td>
         </tr>
@@ -534,7 +534,7 @@ if (player.team) {
           <th style="text-align:left; padding:5px;">Next Opp / Ov / At / Def</th>
           <td style="padding:5px;">
             ${teamData.next_opponent 
-              ? `<img src="/graphics/logos/${teamData.next_opponent}.svg" alt="${teamData.next_opponent}" style="height:20px;">` 
+              ? `<img src="/static/graphics/logos/${teamData.next_opponent}.svg" alt="${teamData.next_opponent}" style="height:20px;">` 
               : ""}
             ${oppRatingsHTML}
           </td>
