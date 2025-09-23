@@ -317,8 +317,36 @@ function sortPlayers(data) {
   });
 }
 
+reloadBtn.addEventListener("click", () => {
+    window.location.reload(); // полностью перезагружает страницу
+});
+
 // Рендер таблицы
 function renderTablePage() {
+
+  if (!playersData || playersData.length === 0) {
+    thead.innerHTML = "";
+    
+    colgroup.innerHTML = "";
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="100%" style="padding:20px; text-align:center; font-size:18px; color:#666;">
+          🔄 Сервер прогружает данные, пожалуйста подождите...
+        </td>
+      </tr>
+    `;
+    document.getElementById("currentPage").textContent = "–";
+    reloadBtn.classList.remove("hidden");
+    return;
+
+
+  }
+
+
+  
+  else {
+  reloadBtn.classList.add("hidden");
+
   let cols;
   if (currentView === "custom") {
     const uniqueKeys = [...new Set(mandatoryColumns.concat(customSelectedColumns))];
@@ -526,7 +554,7 @@ tr.after(profileRow);
 
   document.getElementById("currentPage").textContent = currentPage;
 }
-
+}
 
 function oppColorRating(value, min = 60, max = 100) {
   if (value === null || value === undefined) return "";

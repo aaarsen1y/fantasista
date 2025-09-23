@@ -134,6 +134,10 @@
             </tr>
           </thead>
           <tbody>
+
+                <td colspan="100%" style="padding:20px; text-align:center; font-size:18px; color:#666;">
+                🔄 Сервер прогружает данные, пожалуйста подождите...
+              </td>
             <!-- Игроки будут подгружаться сюда -->
           </tbody>
         </table>
@@ -144,10 +148,10 @@
               <span id="currentPage">1</span>
               <button id="nextPage">→</button>
           </div>
+          <button id="reloadBtn" class="hidden">🔄 Обновить страницу</button>
       </div>
     </div>
 
-    <button id="updateBtn" style="display:none;" onclick="updateData()">🔄 Обновить данные (только для админа)</button>
     <ul id="playersList"></ul>
     <button onclick="logout()">Выйти</button>
   </div>

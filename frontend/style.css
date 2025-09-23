@@ -322,6 +322,7 @@ body, html {
   margin: 15px 0;
 }
 
+
 #pagination button {
   padding: 6px 12px;
   border-radius: 6px;
@@ -403,6 +404,51 @@ body, html {
   background-color: #e0a800;
 }
 
+
+.spinner {
+  border: 6px solid #f3f3f3; /* светлый фон */
+  border-top: 6px solid #3498db; /* цвет вращающегося сегмента */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto; /* центрирование */
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+#reloadBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  margin-left: 40%;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, opacity 0.3s ease;
+}
+
+#reloadBtn:hover {
+  background-color: #2980b9;
+}
+
+#reloadBtn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 /* ===== Адаптив ===== */
 @media (max-width: 900px) {
   #main_container {
@@ -412,6 +458,7 @@ body, html {
 
   #filter_container, #table_container {
     width: 100%;
+    align-items: center;
   }
 
   #auth {
