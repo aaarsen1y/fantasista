@@ -268,7 +268,8 @@
     
 - Все эндпоинты, требующие авторизацию, используют сессии через cookie `session`.
   
-- [Коллекция в Postman] (https://arseniykalistratov11-1078280.postman.co/workspace/fantasista-API~50260fab-5b71-43ad-adf0-51b74a1ad400/collection/48453097-223e1965-1468-492c-9c8d-ffb109716cbf?action=share&creator=48453097)
+- [Коллекция в Postman](https://arseniykalistratov11-1078280.postman.co/workspace/fantasista-API~50260fab-5b71-43ad-adf0-51b74a1ad400/collection/48453097-223e1965-1468-492c-9c8d-ffb109716cbf?action=share&creator=48453097)
     
 
 - Админские эндпоинты проверяют роль пользователя (`role: admin`).
+
